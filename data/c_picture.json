@@ -1,0 +1,30 @@
+{
+    "_modelName" : "c_picture",
+
+    "_comment" : "Allowed values : true|false",
+    "responsive" : true,
+
+    "lazyLoad" : {
+        "_modelName" : "c_lazyLoad",
+        "isLazy" : false
+    },
+
+    "_comment" : "Picture srcs. Used if .responsive=true. Large, medium and small are required, but the same path can be used for all.",
+    "srcExtraLarge" : "http://placehold.it/1420x820",
+    "srcLarge" : "http://placehold.it/720x320",
+    "srcMedium" : "http://placehold.it/520x220",
+    "srcSmall" : "http://placehold.it/420x120",
+
+    "_comment" : "Standard HTML image path. Used if responsive=false",
+    "src" : "http://placehold.it/720x320",
+
+    "_comment" : "Optional",
+    "alt" : "Alternative text",
+
+    "_comment" : "Optional",
+    "title" : "Title text",
+
+    "_comment" : "Optional CSS classes to attach to img element. Works for both responsive and not.",
+    "cssClass" : ""
+
+}

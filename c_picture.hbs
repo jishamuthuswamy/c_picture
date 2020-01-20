@@ -1,0 +1,25 @@
+{{#if responsive}}
+    <!-- Note : do not style c_picture, it is not supposed to be style-opinionated -->
+    <picture class="c_picture">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <!-- first image in srcset is loaded by default, second   -->
+
+        {{# if srcLarge}}
+            <source {{c_lazyLoadSrcPrefix lazyLoad}}srcset="{{srcLarge}} {{# if srcExtraLarge}},{{srcExtraLarge}} 2x{{/if}} " media="(min-width: 1440px)">
+        {{/if}}
+
+        {{# if srcMedium}}
+            <source {{c_lazyLoadSrcPrefix lazyLoad}}srcset="{{srcMedium}} {{# if srcLarge}},{{srcLarge}} 2x{{/if}} " media="(min-width: 768px)">
+        {{/if}}
+
+        {{# if srcSmall}}
+            <source {{c_lazyLoadSrcPrefix lazyLoad}}srcset="{{srcSmall}} {{# if srcMedium}},{{srcMedium}} 2x{{/if}} " media="(min-width: 0px)">
+        {{/if}}
+
+        <!--[if IE 9]></video><![endif]-->
+        <img {{c_lazyLoadSrcPrefix lazyLoad}}srcset="{{srcSmall}} {{# if srcMedium}},{{srcMedium}} 2x{{/if}}" alt="{{alt}}" class="c_picture-image {{cssClass}}">
+
+    </picture>
+{{else}}
+    <img {{c_lazyLoadSrcPrefix lazyLoad}}src="{{src}}" class="c_picture c_picture-image {{cssClass}}" alt="{{alt}}" title="{{title}}" />
+{{/if}}
